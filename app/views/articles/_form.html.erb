@@ -1,0 +1,25 @@
+<div class="w-full h-400">
+<%= form_with model: article do |form| %>
+  <div class="mb-3 w-full">
+    <%= form.label :title, class: "pb-3" %><br>
+    <%= form.text_field :title, class: "w-full rounded-xl border-1 border-black" %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="w-full">
+    <%= form.label :body, class: "pb-3" %><br>
+    <%= form.text_area :body, class: "w-full rounded-xl border-1 border-black h-44" %><br>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <button class="mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    <%= form.submit %>
+    </button>
+  </div>
+<% end %>
+</div>

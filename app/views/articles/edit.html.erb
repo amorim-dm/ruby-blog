@@ -1,0 +1,10 @@
+<div class="w-full h-96">
+<div class="flex gap-3 text-xl items-center mb-3"> 
+    <%= link_to "Home", root_path%> <span class="text-2xl">›</span> <%= link_to @article.title, article_path(@article)%> <span class="text-2xl">›</span> <%= link_to "Edit", edit_article_path(@article), class: "font-bold"%>
+</div>
+<div class="text-4xl w-full">
+  <h1 class="font-bold mb-3">Edit Article</h1>
+</div>
+
+<%= render "form", article: @article %>
+</div>

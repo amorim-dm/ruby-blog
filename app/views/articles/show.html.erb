@@ -1,0 +1,20 @@
+<div class="h-screen w-full">
+  <div class="flex gap-3 text-xl items-center mb-3"> 
+    <%= link_to "Home", root_path%> <span class="text-2xl">›</span> <%= link_to @article.title, article_path(@article), class: "font-bold"%>
+  </div>
+
+  <div class="text-4xl mb-3 w-full flex">
+    <h1 class="font-serif font-bold"><%= @article.title %></h1>
+  </div>
+
+  <div class="w-full font-serif flex my-3">
+    <p><%= @article.body %></p>
+  </div>
+
+  <div class="flex gap-2">
+    <%= link_to "Edit", edit_article_path(@article), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"  %>
+    <%= button_to "Destroy", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" %>
+  </div>
+
+</div>
+

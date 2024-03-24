@@ -1,0 +1,25 @@
+<div class="w-full h-screen">
+  <div class="flex gap-3 text-xl items-center mb-3"> 
+    <%= link_to "Home", root_path, class: "font-bold" %>
+  </div>
+
+  <h1 class="text-4xl mb-3 font-bold">Articles</h1>
+
+  <div class="my-3">
+    <ul class="flex w-full grid gap-3 grid-cols-1">
+      <% @articles.each do |article| %>
+        <li class="flex gap-3 items-center justify-content-center w-full row font-bold rounded-lg border-gray-700 p-3 border-2">
+          <%= link_to article.title, article %>
+          <div class="ml-auto flex gap-3">
+          <%= link_to "Edit", edit_article_path(article.id), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"  %>
+          <%= button_to "Destroy", article_path(article.id), method: :delete, data: { confirm: "Are you sure?" }, class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"><%= link_to "New Article", new_article_path %></button>
+  </div>
+</div>
